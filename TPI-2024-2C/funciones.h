@@ -4,6 +4,9 @@
 using namespace std;
 
 void jugar();
+void comenzarJuego(string nombres[], int puntos[]);
+int lanzarDados(int dados[]);
+int contarRepeticionesDeNumeroProhibido(int numeroPrhibido, int dados[]);
 void solicitarNombres(string &nombre1, string  &nombre2);
 void definirPrimerJugador(string nombre1, string  nombre2, string nombres[]);
 void dibujarDado(int d); //Función que dibuja el valor de un dado recibido por parametro.

@@ -120,6 +120,7 @@ void definirPrimerJugador(string nombre1, string  nombre2, string nombres[])
     cout<<"Ahora solo nos resta definir que jugador comenzará, \npara eso debemos tirar un dado ¿Estas de acuero?"<<endl<<endl;
     system("pause");
     int dado = tirarDado();
+    cout<<endl;
     dibujarDado(dado);
     cout<<endl;
     if(dado%2==0)
@@ -137,13 +138,94 @@ void definirPrimerJugador(string nombre1, string  nombre2, string nombres[])
     system("pause");
 }
 
+int lanzarDados(int dados[])
+{
+    int sumaDeDados = 0;
+    for(int x=0; x<3; x++)
+    {
+        dados[x]= tirarDado();
+        sumaDeDados += dados[x];
+    }
+
+    return sumaDeDados;
+}
+
+int contarRepeticionesDeNumeroProhibido(int numeroPrhibido, int dados[])
+{
+    int cont= 0;
+    for (int x=0; x<3; x++)
+    {
+        if(numeroPrhibido == dados[x])
+        {
+            cont ++;
+        }
+    }
+
+    return cont;
+}
+void comenzarJuego(string nombres[], int puntos[])
+{
+    int dados[3] = {}, puntosPorRonda, puntosPorLanzada;
+    char confirmar;
+    for(int ronda = 1; ronda<=6; ronda++)
+    {
+        cout<<endl<<"[[[[[[[[[[[[[[[[[ RONDA: "<<ronda<<" ]]]]]]]]]]]]]]]]]";
+
+        for(int x=0; x<2; x++)
+        {
+            cout<<endl<<"  -----------------------------------------" <<endl<<endl;
+            cout<<"          -- Turno de: "<<nombres[x]<<" -- "<<endl<<endl;
+            confirmar = 'S';
+            puntosPorRonda = 0;
+            while(toupper(confirmar) != 'N')
+            {
+                puntosPorLanzada = lanzarDados(dados);
+                puntosPorRonda += puntosPorLanzada;
+                dibujarTresDadosEnLinea(dados);
+
+                switch(contarRepeticionesDeNumeroProhibido(ronda, dados))
+                {
+                case 0:
+                    cout<<endl<<" Se obtuvieron "<<puntosPorLanzada<<" puntos en esta tirada"<<endl;
+                    cout<<" Puntos acumulados al momento: "<<puntosPorRonda<<endl;
+                    cout<<endl<<" ¿Desea lanzar los dados una vez más? (S/N) ";
+                    cin>>confirmar;
+                    break;
+                case 1:
+                    cout<<"        ¡Obtuviste 1 número prohibido! /n Perdes el turno y tus puntos acumulados en esta ronda."<<endl;
+                    puntosPorRonda = 0;
+                    confirmar = 'N';
+                    break;
+                case 2:
+                    cout<<"        ¡Obtuviste 3 número prohibido! /n Perdes el turno y tus puntos acumulados en esta ronda, la proxima ronda solo tendras 2 dados."<<endl;
+//                    puntosPorRonda = 0;
+//                    confirmar = 'N';
+                    break;
+                case 3:
+                    break;
+
+                }
+            }
+            puntos[x]+=puntosPorRonda;
+        }
+        cout<<endl<<endl<<" -- Puntajes obtenidos en la ronda "<<ronda<<" -- "<<endl;
+        cout<<"         - "<<nombres[0]<<": "<<puntos[0]<<" -   "<<endl;
+        cout<<"         - "<<nombres[1]<<": "<<puntos[1]<<" -   "<<endl<<endl;
+        system("pause");
+        system("cls");
+    }
+}
+
 void jugar()
 {
-    system("cls");
     string nombre1, nombre2;
     string nombres[2];
+    int puntos[2] = {};
+    system("cls");
     cout<< "                     BONZO"<<endl;
     cout<< "-------------------------------------------------------"<<endl;
     solicitarNombres(nombre1, nombre2);
     definirPrimerJugador(nombre1, nombre2, nombres);
+    system("cls");
+    comenzarJuego(nombres, puntos);
 }

@@ -30,9 +30,8 @@ int main()
         cout << "2 - ESTADISTICAS" << endl;
         cout << "3 - CREDITOS" << endl;
         cout << "-------------------" << endl;
-        cout << endl;
         cout << "0 - SALIR" << endl;
-        cout << endl;
+        cout<<endl<<"    Opción: ";
         cin >> opc;
 
         switch (opc)
