@@ -42,14 +42,13 @@ void dibujarDado(int d)
     cout<<"+-------+"<<endl;
 }
 
-void dibujarTresDadosEnLinea(int dados[])
+void dibujarTresDadosEnLinea(int dados[], int cantDados)
 {
-    string linea2 = "", linea3 = "", linea4 = "";
+    string linea1 = " ", linea2 = " ", linea3 = " ", linea4 = " ";
 
-    cout<<"+-------+ +-------+ +-------+"<<endl;
-
-    for(int x=0; x<3; x++)
+    for(int x=0; x<cantDados; x++)
     {
+        linea1+="+-------+ ";
         switch (dados[x])
         {
         case 1:
@@ -84,10 +83,12 @@ void dibujarTresDadosEnLinea(int dados[])
             break;
         }
     }
+    cout<<endl;
+    cout<<linea1<<endl;
     cout<<linea2<<endl;
     cout<<linea3<<endl;
     cout<<linea4<<endl;;
-    cout<<"+-------+ +-------+ +-------+"<<endl;
+    cout<<linea1<<endl; //Se repite la misma linea que abre los dados para que los cierre.
 }
 
 int tirarDado()
@@ -138,10 +139,10 @@ void definirPrimerJugador(string nombre1, string  nombre2, string nombres[])
     system("pause");
 }
 
-int lanzarDados(int dados[])
+int lanzarDados(int dados[], int cantDados)
 {
     int sumaDeDados = 0;
-    for(int x=0; x<3; x++)
+    for(int x=0; x<cantDados; x++)
     {
         dados[x]= tirarDado();
         sumaDeDados += dados[x];
@@ -165,52 +166,56 @@ int contarRepeticionesDeNumeroProhibido(int numeroPrhibido, int dados[])
 }
 void comenzarJuego(string nombres[], int puntos[])
 {
-    int dados[3] = {}, puntosPorRonda, puntosPorLanzada;
+    int dados[3] = {}, puntosPorRonda[2], puntosPorLanzada, cantDados[2] = {3, 3};
     char confirmar;
     for(int ronda = 1; ronda<=6; ronda++)
     {
-        cout<<endl<<"[[[[[[[[[[[[[[[[[ RONDA: "<<ronda<<" ]]]]]]]]]]]]]]]]]";
-
         for(int x=0; x<2; x++)
         {
-            cout<<endl<<"  -----------------------------------------" <<endl<<endl;
-            cout<<"          -- Turno de: "<<nombres[x]<<" -- "<<endl<<endl;
+            system("cls");
+            cout<<endl<<"[[[[[[[[[[[[[[[[[ RONDA: "<<ronda<<" ]]]]]]]]]]]]]]]]]";
             confirmar = 'S';
-            puntosPorRonda = 0;
+            puntosPorRonda[x] = 0;
+            cout<<endl<<"  -----------------------------------------" <<endl<<endl;
+            cout<<"          -- Turno de: "<<nombres[x]<<" --"<<endl;
+            cout<<"         -- Puntos al momento: "<<puntosPorRonda[x]<<" --"<<endl;
+            cout<<"      -- Cantidad de dados disponibles: "<<cantDados[x]<<" --"<<endl<<endl;
             while(toupper(confirmar) != 'N')
             {
-                puntosPorLanzada = lanzarDados(dados);
-                puntosPorRonda += puntosPorLanzada;
-                dibujarTresDadosEnLinea(dados);
+                puntosPorLanzada = lanzarDados(dados, cantDados[x]);
+                puntosPorRonda[x] += puntosPorLanzada;
+                dibujarTresDadosEnLinea(dados, cantDados[x]);
 
                 switch(contarRepeticionesDeNumeroProhibido(ronda, dados))
                 {
                 case 0:
                     cout<<endl<<" Se obtuvieron "<<puntosPorLanzada<<" puntos en esta tirada"<<endl;
-                    cout<<" Puntos acumulados al momento: "<<puntosPorRonda<<endl;
+                    cout<<" Puntos acumulados al momento: "<<puntosPorRonda[x]<<endl;
                     cout<<endl<<" ¿Desea lanzar los dados una vez más? (S/N) ";
                     cin>>confirmar;
                     break;
                 case 1:
-                    cout<<"        ¡Obtuviste 1 número prohibido! /n Perdes el turno y tus puntos acumulados en esta ronda."<<endl;
-                    puntosPorRonda = 0;
+                    cout<<endl<<"           ¡Obtuviste 1 número prohibido! \n Perdes el turno y tus puntos acumulados en esta ronda."<<endl;
+                    puntosPorRonda[x] = 0;
                     confirmar = 'N';
+                    system("pause");
                     break;
                 case 2:
-                    cout<<"        ¡Obtuviste 3 número prohibido! /n Perdes el turno y tus puntos acumulados en esta ronda, la proxima ronda solo tendras 2 dados."<<endl;
-//                    puntosPorRonda = 0;
-//                    confirmar = 'N';
+                    cout<<endl<<"        ¡Obtuviste 2 números prohibidos! \n Perdes el turno y tus puntos acumulados en esta ronda, la próxima ronda solo tendrás 2 dados."<<endl;
+                    puntosPorRonda[x] = 0;
+                    confirmar = 'N';
+                    cantDados[x]=2;
+                    system("pause");
                     break;
                 case 3:
                     break;
-
                 }
             }
-            puntos[x]+=puntosPorRonda;
+            puntos[x]+=puntosPorRonda[x];
         }
         cout<<endl<<endl<<" -- Puntajes obtenidos en la ronda "<<ronda<<" -- "<<endl;
-        cout<<"         - "<<nombres[0]<<": "<<puntos[0]<<" -   "<<endl;
-        cout<<"         - "<<nombres[1]<<": "<<puntos[1]<<" -   "<<endl<<endl;
+        cout<<"         - "<<nombres[0]<<": "<<puntosPorRonda[0]<<" -   "<<endl;
+        cout<<"         - "<<nombres[1]<<": "<<puntosPorRonda[1]<<" -   "<<endl<<endl;
         system("pause");
         system("cls");
     }
@@ -226,6 +231,5 @@ void jugar()
     cout<< "-------------------------------------------------------"<<endl;
     solicitarNombres(nombre1, nombre2);
     definirPrimerJugador(nombre1, nombre2, nombres);
-    system("cls");
     comenzarJuego(nombres, puntos);
 }
