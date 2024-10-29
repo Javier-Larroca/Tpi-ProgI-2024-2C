@@ -5,6 +5,7 @@ using namespace std;
 
 void jugar();
 void comenzarJuego(string nombres[], int puntos[]);
+void definirGanador(string nombres[], int puntos[]);
 int lanzarDados(int dados[], int cantDados);
 int contarRepeticionesDeNumeroProhibido(int numeroPrhibido, int dados[]);
 void solicitarNombres(string &nombre1, string  &nombre2);

@@ -164,11 +164,12 @@ int contarRepeticionesDeNumeroProhibido(int numeroPrhibido, int dados[])
 
     return cont;
 }
+
 void comenzarJuego(string nombres[], int puntos[])
 {
     int dados[3] = {}, puntosPorRonda[2], puntosPorLanzada, cantDados[2] = {3, 3};
     char confirmar;
-    for(int ronda = 1; ronda<=6; ronda++)
+    for(int ronda = 1; ronda<=3; ronda++)
     {
         for(int x=0; x<2; x++)
         {
@@ -201,7 +202,7 @@ void comenzarJuego(string nombres[], int puntos[])
                     system("pause");
                     break;
                 case 2:
-                    cout<<endl<<"        ¡Obtuviste 2 números prohibidos! \n Perdes el turno y tus puntos acumulados en esta ronda, la próxima ronda solo tendrás 2 dados."<<endl;
+                    cout<<endl<<"        ¡Obtuviste 2 números prohibidos! \n Perdes el turno y tus puntos acumulados en esta ronda,\n la próxima ronda solo tendrás 2 dados."<<endl;
                     puntosPorRonda[x] = 0;
                     confirmar = 'N';
                     cantDados[x]=2;
@@ -221,6 +222,28 @@ void comenzarJuego(string nombres[], int puntos[])
     }
 }
 
+void definirGanador(string nombres[], int puntos[])
+{
+    cout<<endl<<endl<<"---------------------------------------------------------"<<endl;
+    if(puntos[0]==puntos[1])
+    {
+
+    }
+    else
+    {
+        if(puntos[0]==puntos[1])
+        {
+            cout<<"El ganador fue "<<nombres[0]<<" con "<<puntos[0]<<" puntos.";
+        }
+        else
+        {
+            cout<<"El ganador fue "<<nombres[1]<<" con "<<puntos[1]<<" puntos.";
+        }
+    }
+        cout<<endl<<endl<<"---------------------------------------------------------"<<endl;
+        system("pause");
+}
+
 void jugar()
 {
     string nombre1, nombre2;
@@ -232,4 +255,5 @@ void jugar()
     solicitarNombres(nombre1, nombre2);
     definirPrimerJugador(nombre1, nombre2, nombres);
     comenzarJuego(nombres, puntos);
+    definirGanador(nombres, puntos);
 }
