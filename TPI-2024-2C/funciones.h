@@ -3,7 +3,8 @@
 
 using namespace std;
 
-void jugar();
+void jugar(int rankingPuntos[], string rankingNombres[]);
+void dibujarMono();
 void comenzarJuego(string nombres[], int puntos[]);
 void mostrarPuntosDeLaPartida(string nombres[], int puntos[]);
 void recalcularPuntos(int puntos[], int cantBonzos[]); //Función que recalculara los puntos de cada jugador dependiendo de cuantos hitos se hayan cumplidos.
@@ -15,6 +16,7 @@ void solicitarNombres(string &nombre1, string  &nombre2); //Solicita los nombres
 void definirPrimerJugador(string nombre1, string  nombre2, string nombres[]); //Define el jugador quecomenzara, ordenandolo de manera correspondiente en el vector de nombres.
 void dibujarDado(int d); //Función que dibuja el valor de un dado recibido por parametro.
 void dibujarTresDadosEnLinea(int dados[], int cantDados); //Función que dibuja en la misma linea 3 dados según los valores que reciba del vector.
+void guardarPartidaEnRanking(string nombres[], int puntos[], int rankingPuntos[], string rankingNombres[]);
 int tirarDado(); //Función que devuelve un valor entre el 1 y el 6.
 
 #endif // FUNCIONES_H_INCLUDED
