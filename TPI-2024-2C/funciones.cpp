@@ -3,82 +3,6 @@
 
 using namespace std;
 
-void dibujarMono()
-{
-//    cout << "──────────────────────────█" << endl;
-//    cout << "────────────────────────████" << endl;
-//    cout << "────────────────────────█▓███" << endl;
-//    cout << "─────────────────────███▓▓▓██" << endl;
-//    cout << "───────────────────███▓▓▓▓▓▓██" << endl;
-//    cout << "──────────────────██▓▓▓▓▓▓▓▓▓█" << endl;
-//    cout << "──────────────────█▓▓▓▓▓▓▓▓▓▓█" << endl;
-//    cout << "─────────────────█▓▓▓▓▓▓▓▓▓████" << endl;
-//    cout << "─────────────────███▓▓▓▓▓▓██──█▄" << endl;
-//    cout << "────────────────█▓▓██▓▓▓▓██─▄███" << endl;
-//    cout << "───────────────█▒▒▒▒██▓▓▓█──█─██" << endl;
-//    cout << "──────────────█▒▒▒▒▒▒██▓█───████" << endl;
-//    cout << "─────────────█▒▒███▒▒▒█▓█───▀███" << endl;
-//    cout << "─────────────█▒█▒▒▒█▒▒▒██──────█" << endl;
-//    cout << "─────────────█▒█▒▒▒▒█▒▒██──────█" << endl;
-//    cout << "─────────────█▒▒█▒▒▒▒▒▒███────██▄" << endl;
-//    cout << "─────────────█▒▒▒█▒▒▒▒▒████──██▒█" << endl;
-//    cout << "─────────────▀█▒▒▒█▒▒▒▒██▒████▒▒█" << endl;
-//    cout << "─────▄██▄─────▀█▒▒▒▒▒▒███▒▒▒▒▒▒▒█▄" << endl;
-//    cout << "─────█▓▓██─────▀█▒▒▒▒▒█▒▒▒▒▒▒▒▒▒▒█" << endl;
-//    cout << "─────█▓▓▓█──────▀█▒▒▒█▒▒▒▒▒▒▒▒▒▒▒█" << endl;
-//    cout << "─────██▓▓██──────▀█▒██▒▒▒▒▒▒▒▒▒▒▒█" << endl;
-//    cout << "──────█▓▓▓█───────████▒▒▒▒████▒▒▒█" << endl;
-//    cout << "──────██▓▓█───────████▒▒▒█▓▓▓▓█▒██" << endl;
-//    cout << "───────█▓▓█──────██▓██▒▒▒█▓▓▓▓████" << endl;
-//    cout << "───────█▓▓█─────██▓▓▓██▒▒█▓▓▓▓▓█▒█" << endl;
-//    cout << "───────█▓▓█────██▓▓▓▓▓██▒▒█▓▓▓▓███" << endl;
-//    cout << "──────▄█▓▓█────██▓▓▓▓▓▓███████▓▓▓█" << endl;
-//    cout << "──────██▓▓█───██▓▓▓▓▓▓▓▓█▀──▀██▓▓█" << endl;
-//    cout << "─────██▓▓██──██▓▓▓▓▓▓▓▓▓▓█────█▓▓█" << endl;
-//    cout << "────██▓▓██──██▓▓▓▓▓▓▓▓▓▓▓██───█▓▓█" << endl;
-//    cout << "───██▓▓██───█▓▓▓▓▓███▓▓▓▓▓█───█▓▓█" << endl;
-//    cout << "──██▓▓██───██▓▓▓▓██─██▓▓▓▓▓█─█▓▓▓█" << endl;
-//    cout << "─██▓▓██────█▓▓▓▓▓█───█▓▓▓▓▓▓█▓▓▓██" << endl;
-//    cout << "▄█▓▓██─────█▓▓▓▓▓█───██▓▓▓▓▓▓▓▓██▀" << endl;
-//    cout << "█▓▓██─────██▓▓▓▓▓█────█▓▓▓▓▓▓▓██▀" << endl;
-//    cout << "█▓▓█──────█▓▓▓▓▓▓█────██▓▓▓▓▓██▀" << endl;
-//    cout << "█▓▓█─────██▓▓▓▓▓▓█─────██▓▓▓▓██▄" << endl;
-//    cout << "█▓▓█─────█▓▓▓▓▓▓█─────▄████▓██▓█▄" << endl;
-//    cout << "█▓▓█─────█▓▓▓▓▓▓█────██▓▓▓███▓▓▓█" << endl;
-//    cout << "█▓▓█─────█▓▓▓▓▓▓█───█▓▓▓▓▓▓▓▓▓▓██" << endl;
-//    cout << "█▓▓█─────█▓▓▓▓▓▓▓█─█▓▓▓▓▓▓▓▓▓▓▓██" << endl;
-//    cout << "█▓▓█─────██▓▓▓▓▓▓██▓▓▓▓▓▓▓▓▓▓▓██" << endl;
-//    cout << "█▓▓██─────█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██" << endl;
-//    cout << "██▓▓██────█▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██" << endl;
-//    cout << "─██▓▓█▄─▄██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██" << endl;
-//    cout << "──██▓▓█████▓▓▓▓▓▓▓▓▓▓▓▓▓▓███" << endl;
-//    cout << "───██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██" << endl;
-//    cout << "────█████████▓▓▓▓▓▓▓▓▓▓▓██▄" << endl;
-//    cout << "───────────▀████▓▓▓▓▓▓▓▓▓█████▄" << endl;
-//    cout << "─────────────▀██████▓▓▓▓▓▓▓▓▓▓██" << endl;
-//    cout << "─────────────────▀███████▓▓▓▓▓██" << endl;
-//    cout << "──────────────────────▀████████▀" << endl;
-//    cout << "───▄██▄─────────────▄▄" << endl;
-//    cout << "──█████▄▄▄▄───────▄▀──" << endl;
-//    cout << "────▀██▀▀████▄───▄▀───" << endl;
-//    cout << "───▄█▀▄██▄████▄─▄█────" << endl;
-//    cout << "▄▄█▀▄▄█─▀████▀██▀─────" << endl;
-//    cout << "──────────────────────────────────────────────────────────────────────────────────────────" << endl;
-//    cout << "─██████████████───██████████████─██████──────────██████─██████████████████─██████████████─" << endl;
-//    cout << "─██░░░░░░░░░░██───██░░░░░░░░░░██─██░░██████████──██░░██─██░░░░░░░░░░░░░░██─██░░░░░░░░░░██─" << endl;
-//    cout << "─██░░██████░░██───██░░██████░░██─██░░░░░░░░░░██──██░░██─████████████░░░░██─██░░██████░░██─" << endl;
-//    cout << "─██░░██──██░░██───██░░██──██░░██─██░░██████░░██──██░░██─────────████░░████─██░░██──██░░██─" << endl;
-//    cout << "─██░░██████░░████─██░░██──██░░██─██░░██──██░░██──██░░██───────████░░████───██░░██──██░░██─" << endl;
-//    cout << "─██░░░░░░░░░░░░██─██░░██──██░░██─██░░██──██░░██──██░░██─────████░░████─────██░░██──██░░██─" << endl;
-//    cout << "─██░░████████░░██─██░░██──██░░██─██░░██──██░░██──██░░██───████░░████───────██░░██──██░░██─" << endl;
-//    cout << "─██░░██────██░░██─██░░██──██░░██─██░░██──██░░██████░░██─████░░████─────────██░░██──██░░██─" << endl;
-//    cout << "─██░░████████░░██─██░░██████░░██─██░░██──██░░░░░░░░░░██─██░░░░████████████─██░░██████░░██─" << endl;
-//    cout << "─██░░░░░░░░░░░░██─██░░░░░░░░░░██─██░░██──██████████░░██─██░░░░░░░░░░░░░░██─██░░░░░░░░░░██─" << endl;
-//    cout << "─████████████████─██████████████─██████──────────██████─██████████████████─██████████████─" << endl;
-//    cout << "──────────────────────────────────────────────────────────────────────────────────────────" << endl;
-
-}
-
 void dibujarDado(int d)
 {
     cout<<"+-------+"<<endl;
@@ -251,7 +175,7 @@ void comenzarJuego(string nombres[], int puntos[], int cantBonzos[], int cantLan
     int dados[3] = {}, puntosPorRonda[2], puntosPorLanzada, cantDados[2] = {3, 3}, opc, lanzadasExitosas;
     char confirmar;
 
-    for(int ronda = 1; ronda<=3; ronda++)
+    for(int ronda = 1; ronda<=6; ronda++)
     {
         for(int x=0; x<2; x++)
         {
@@ -374,13 +298,13 @@ void mostrarPuntosDeLaPartida(string nombres[], int puntos[],int cantBonzos[], i
 //        cout<<"  "<<nombres[x]<<"   -   "<<puntos[x]<<endl;
 //    }
     cout<<" Hito                  "<<nombres[0]<<"         "<<nombres[1]<<endl;
-    cout<<" ------------------------------------------------"<<endl;
-    cout<<" Puntos                "<<puntos[0]<<"         "<<puntos[1]<<endl;
-    cout<<" Cant. 50 puntos       "<<puntos[0]/50<<"         "<<puntos[1]/50<<endl;
-    cout<<" Bonzo, ve a dormir    "<<cantBonzos[0]<<"         "<<cantBonzos[1]<<endl;
-    cout<<" Lanzamientos exitosos "<<cantLanzamientosExitosos[0]<<"         "<<cantLanzamientosExitosos[1]<<endl;
+    cout<<" -----------------------------------------------"<<endl;
+    cout<<" Puntos                    "<<puntos[0]<<"         "<<puntos[1]<<endl;
+    cout<<" Cant. 50 puntos           "<<puntos[0]/50<<"          "<<puntos[1]/50<<endl;
+    cout<<" Bonzo, ve a dormir        "<<cantBonzos[0]<<"          "<<cantBonzos[1]<<endl;
+    cout<<" Lanzamientos exitosos     "<<cantLanzamientosExitosos[0]<<"          "<<cantLanzamientosExitosos[1]<<endl;
     recalcularPuntos(puntos, cantBonzos, cantLanzamientosExitosos);
-    cout<<" Puntos totales        "<<puntos[0]<<"         "<<puntos[1]<<endl;
+    cout<<" Puntos totales            "<<puntos[0]<<"         "<<puntos[1]<<endl;
 }
 
 void definirGanador(string nombres[], int puntos[], int cantBonzos[], int cantLanzamientosExitosos[])
@@ -418,16 +342,32 @@ void definirGanador(string nombres[], int puntos[], int cantBonzos[], int cantLa
 
 void guardarPartidaEnRanking(string nombres[], int puntos[], string rankingNombres[], int rankingPuntos[])
 {
-    int auxP;
-    string auxN;
-//    for(int x=0; x<4; x++)
-//    {
-//        if(puntos[0]>rankingPuntos[x])
-//        {
-//            auxP = rankingPuntos[x];
-//            auxN = rankingPuntos[x]
-//        }
-//    }
+    rankingNombres[5]=nombres[0];
+    rankingPuntos[5]=puntos[0];
+    rankingNombres[6]=nombres[1];
+    rankingPuntos[6]=puntos[1];
+    ordenarRanking(rankingNombres, rankingPuntos);
+}
+
+void ordenarRanking(string nombres[], int puntos[])
+{
+    int auxPuntos;
+    string auxNombres;
+    for (int i = 0; i < 7 - 1; i++)
+    {
+        for (int j = 0; j < 7 - i - 1; j++)
+        {
+            if (puntos[j] < puntos[j + 1])
+            {
+                auxPuntos = puntos[j];
+                puntos[j] = puntos[j + 1];
+                puntos[j + 1] = auxPuntos;
+                auxNombres = nombres[j];
+                nombres[j] = nombres[j + 1];
+                nombres[j + 1] = auxNombres;
+            }
+        }
+    }
 }
 
 void jugar(int rankingPuntos[], string rankingNombres[])
@@ -445,4 +385,17 @@ void jugar(int rankingPuntos[], string rankingNombres[])
     comenzarJuego(nombres, puntos, cantBonzos, cantLanzamientosExitosos);
     definirGanador(nombres, puntos, cantBonzos, cantLanzamientosExitosos);
     guardarPartidaEnRanking(nombres, puntos, rankingNombres, rankingPuntos);
+}
+
+void mostrarEstadisticas(string nombres[], int puntos[])
+{
+
+    cout<<"-------------------------------------------------------"<<endl;
+    cout<<" PUESTOS      -       JUGADOR       -        PUNTOS"<<endl;
+    for(int x=0; x<5; x++)
+    {
+        cout<<"    "<<x+1<<"         -     "<<nombres[x]<<"        -        "<<puntos[x]<<endl;
+    }
+    cout<<"-------------------------------------------------------"<<endl;
+    system("pause");
 }

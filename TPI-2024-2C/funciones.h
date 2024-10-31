@@ -4,7 +4,6 @@
 using namespace std;
 
 void jugar(int rankingPuntos[], string rankingNombres[]);
-//void dibujarMono();
 void comenzarJuego(string nombres[], int puntos[], int cantBonzos[], int cantLanzamientosExitosos[]);
 void mostrarPuntosDeLaPartida(string nombres[], int puntos[],int cantBonzos[], int cantLanzamientosExitosos[]);
 void recalcularPuntos(int puntos[], int cantBonzos[], int cantLanzamientosExitosos[]); //Función que recalculara los puntos de cada jugador dependiendo de cuantos hitos se hayan cumplidos.
@@ -17,6 +16,9 @@ void definirPrimerJugador(string nombre1, string  nombre2, string nombres[]); //
 void dibujarDado(int d); //Función que dibuja el valor de un dado recibido por parametro.
 void dibujarTresDadosEnLinea(int dados[], int cantDados); //Función que dibuja en la misma linea 3 dados según los valores que reciba del vector.
 void guardarPartidaEnRanking(string nombres[], int puntos[], int rankingPuntos[], string rankingNombres[]);
+void ordenarRanking(string nombres[], int puntos[]);
 int tirarDado(); //Función que devuelve un valor entre el 1 y el 6.
+void mostrarEstadisticas(string nombres[], int puntos[]);
+
 
 #endif // FUNCIONES_H_INCLUDED

@@ -1,24 +1,21 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-//#include <windows.h>
 #include "funciones.h"
 
 using namespace std;
 
 int main()
 {
-    setlocale(LC_ALL, "spanish");
+    setlocale(LC_ALL, "Spanish");
     srand (time(NULL));
-    //SetConsoleOutputCP(CP_WINANSI);
 
-    int opc, rankingPuntos[5]={};
-    string rankingNombres[5]={};
+    int opc, rankingPuntos[7]={};
+    string rankingNombres[7]={};
 
     while(true)
     {
         system("cls");
-        //dibujarMono();
         cout << "      BONZO" << endl;
         cout << "-------------------" << endl;
         cout << "1 - JUGAR" << endl;
@@ -35,8 +32,7 @@ int main()
             jugar(rankingPuntos, rankingNombres);
             break;
         case 2:
-
-            //estadisticas();
+            mostrarEstadisticas(rankingNombres, rankingPuntos);
             break;
         case 3:
             //creditos();
