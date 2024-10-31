@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+//#include <windows.h>
 #include "funciones.h"
 
 using namespace std;
@@ -9,6 +10,7 @@ int main()
 {
     setlocale(LC_ALL, "spanish");
     srand (time(NULL));
+    //SetConsoleOutputCP(CP_WINANSI);
 
     int opc, rankingPuntos[5]={};
     string rankingNombres[5]={};
@@ -16,7 +18,7 @@ int main()
     while(true)
     {
         system("cls");
-        dibujarMono();
+        //dibujarMono();
         cout << "      BONZO" << endl;
         cout << "-------------------" << endl;
         cout << "1 - JUGAR" << endl;
