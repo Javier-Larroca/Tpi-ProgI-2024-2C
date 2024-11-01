@@ -192,6 +192,12 @@ void comenzarJuego(string nombres[], int puntos[], int cantBonzos[], int cantLan
             while(toupper(confirmar) != 'N')
             {
                 puntosPorLanzada = lanzarDados(dados, cantDadosRonda[x][ronda-1]);
+//                if(ronda==2) //Prueba para que toquen tres numeros porhibidos.
+//                {
+//                    dados[0]=2;
+//                    dados[1]=2;
+//                    dados[2]=2;
+//                }
                 dibujarTresDadosEnLinea(dados, cantDadosRonda[x][ronda-1]);
 
                 switch(contarRepeticionesDeNumeroProhibido(ronda, dados, cantDadosRonda[x][ronda-1]))
@@ -200,13 +206,13 @@ void comenzarJuego(string nombres[], int puntos[], int cantBonzos[], int cantLan
                     if(cantDadosRonda[x][ronda-1]==3 && dadosIguales(dados))
                     {
                         cantBonzos[x]++;
-                        opc = 0;
+                        char opc = 'C';
                         cout<<endl<<"Obtuviste BONZO VE A DORMIR puedes elegir entre las siguientes opciones: "<<endl;
-                        cout<<"   - Quitarle un dado al oponent: 1"<<endl;
-                        cout<<"   - Duplicar los puntos de esta tirada: 2"<<endl;
-                        while(opc!= 1 && opc != 2)
+                        cout<<"   - Quitarle un dado al oponent: A"<<endl;
+                        cout<<"   - Duplicar los puntos de esta tirada: B"<<endl;
+                        while(toupper(opc)!= 'A' && toupper(opc)!= 'B')
                         {
-                            cout<<" Eliga entre la opción 1 o la opción 2: ";
+                            cout<<" Eliga entre la opción A o la opción B: ";
                             cin>>opc;
                         }
                         switch (opc)
