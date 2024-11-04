@@ -119,7 +119,7 @@ void solicitarNombres(string &nombre1, string &nombre2)
 void definirPrimerJugador(string nombre1, string  nombre2, string nombres[])
 {
     cout<<endl<<"--------------------------------------------------------"<<endl<<endl;
-    cout<<" Ahora solo nos resta definir que jugador comenzará, \n para eso debemos tirar un dado ¿Estas de acuero?"<<endl<<endl;
+    cout<<" Ahora solo nos resta definir que jugador comenzará, \n para eso debemos tirar un dado ¿Estas de acuerdo?"<<endl<<endl;
     system("pause");
     int dado = tirarDado();
     cout<<endl;
