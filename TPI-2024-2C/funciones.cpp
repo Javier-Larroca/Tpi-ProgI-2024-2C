@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include "funciones.h"
 
@@ -106,7 +107,7 @@ void solicitarNombres(string &nombre1, string &nombre2)
         cin>>nombre1;
         cout<<endl<<" Segundo jugador: ";
         cin>> nombre2;
-        cout<<endl<<" Â¿Desea confirmar los nombres ingresados? (S/N): ";
+        cout<<endl<<" ¿Desea confirmar los nombres ingresados? (S/N): ";
         cin>> confirmar;
         cout<<"--------------------------------------------------------"<<endl;
         cout<< endl;
@@ -118,7 +119,7 @@ void solicitarNombres(string &nombre1, string &nombre2)
 void definirPrimerJugador(string nombre1, string  nombre2, string nombres[])
 {
     cout<<endl<<"--------------------------------------------------------"<<endl<<endl;
-    cout<<" Ahora solo nos resta definir que jugador comenzarÃ¡, \n para eso debemos tirar un dado Â¿Estas de acuero?"<<endl<<endl;
+    cout<<" Ahora solo nos resta definir que jugador comenzará, \n para eso debemos tirar un dado ¿Estas de acuero?"<<endl<<endl;
     system("pause");
     int dado = tirarDado();
     cout<<endl;
@@ -126,13 +127,13 @@ void definirPrimerJugador(string nombre1, string  nombre2, string nombres[])
     cout<<endl;
     if(dado%2==0)
     {
-        cout<<"Toco un dado par, comenzarÃ¡ a jugar: "<<nombre1<<endl<<endl;
+        cout<<"Toco un dado par, comenzará a jugar: "<<nombre1<<endl<<endl;
         nombres[0]=nombre1;
         nombres[1]=nombre2;
     }
     else
     {
-        cout<<"Toco un dado impar, comenzarÃ¡ a jugar: "<<nombre2<<endl<<endl;
+        cout<<"Toco un dado impar, comenzará a jugar: "<<nombre2<<endl<<endl;
         nombres[0]=nombre2;
         nombres[1]=nombre1;
     }
@@ -212,7 +213,7 @@ void comenzarJuego(string nombres[], int puntos[], int cantBonzos[], int cantLan
                         cout<<"   - Duplicar los puntos de esta tirada: B"<<endl;
                         while(toupper(opc)!= 'A' && toupper(opc)!= 'B')
                         {
-                            cout<<" Eliga entre la opciÃ³n A o la opciÃ³n B: ";
+                            cout<<" Eliga entre la opción A o la opción B: ";
                             cin>>opc;
                         }
                         switch (opc)
@@ -238,19 +239,19 @@ void comenzarJuego(string nombres[], int puntos[], int cantBonzos[], int cantLan
                     puntosPorRonda[x] += puntosPorLanzada;
                     cout<<endl<<" Se obtuvieron "<<puntosPorLanzada<<" puntos en esta tirada"<<endl;
                     cout<<" Puntos acumulados al momento en la ronda: "<<puntosPorRonda[x]<<endl;
-                    cout<<endl<<" Â¿Desea lanzar los dados una vez mÃ¡s? (S/N) ";
+                    cout<<endl<<" ¿Desea lanzar los dados una vez más? (S/N) ";
                     cin>>confirmar;
 
                     break;
                 case 1:
-                    cout<<endl<<"           Â¡Obtuviste 1 nÃºmero prohibido! \n Perdes el turno y tus puntos acumulados en esta ronda."<<endl<<endl;
+                    cout<<endl<<"           ¡Obtuviste 1 número prohibido! \n Perdes el turno y tus puntos acumulados en esta ronda."<<endl<<endl;
                     puntosPorRonda[x] = 0;
                     lanzadasExitosas = 0;
                     confirmar = 'N';
                     system("pause");
                     break;
                 case 2:
-                    cout<<endl<<"        Â¡Obtuviste 2 nÃºmeros prohibidos! \n Perdes el turno y tus puntos acumulados en esta ronda,\n    Â¡La prÃ³xima ronda solo tendrÃ¡s 2 dados!"<<endl<<endl;
+                    cout<<endl<<"        ¡Obtuviste 2 números prohibidos! \n Perdes el turno y tus puntos acumulados en esta ronda,\n    ¡La próxima ronda solo tendrás 2 dados!"<<endl<<endl;
                     puntosPorRonda[x] = 0;
                     lanzadasExitosas = 0;
                     confirmar = 'N';
@@ -258,7 +259,7 @@ void comenzarJuego(string nombres[], int puntos[], int cantBonzos[], int cantLan
                     system("pause");
                     break;
                 case 3:
-                    cout<<endl<<"        Â¡Obtuviste 3 nÃºmeros prohibidos! \n      Pierdes el juego... =C"<<endl<<endl;
+                    cout<<endl<<"        ¡Obtuviste 3 números prohibidos! \n      Pierdes el juego... =C"<<endl<<endl;
                     puntos[x]=0;
                     lanzadasExitosas = 0;
                     cantBonzos[x]=0;
@@ -337,7 +338,7 @@ void definirGanador(string nombres[], int puntos[], int cantBonzos[], int cantLa
             }
             else
             {
-                cout<<"         Â¡Hubo un empate, nadie gana, nadie pierde!";
+                cout<<"         ¡Hubo un empate, nadie gana, nadie pierde!";
             }
         }
     }

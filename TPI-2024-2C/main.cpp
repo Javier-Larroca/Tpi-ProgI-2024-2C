@@ -43,9 +43,11 @@ int main()
             //creditos();
             break;
         case 0:
+            cout<<endl<<" ¿Esta seguro que desea salir del juego? (S/N): ";
+            cin>>confirmar;
             while(toupper(confirmar)!='N' && toupper(confirmar)!='S')
             {
-                cout<<endl<<" ¿Esta seguro que desea salir del juego? (S/N): ";
+                cout<<endl<<" Opción ingresada incorrecta. (S/N): ";
                 cin>>confirmar;
             }
             if(toupper(confirmar)=='S')

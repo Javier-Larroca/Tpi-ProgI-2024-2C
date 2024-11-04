@@ -1,13 +1,13 @@
 # depslib dependency file v1.0
-1730750563 source:c:\users\jlarroca\desktop\progi\tpi\tpi-2024-2c\funciones.cpp
+1730755314 source:c:\users\jlarroca\desktop\progi\tpi\tpi-2024-2c\funciones.cpp
 	<iostream>
 	"funciones.h"
 
-1730750558 source:c:\users\jlarroca\desktop\progi\tpi\tpi-2024-2c\main.cpp
+1730748344 c:\users\jlarroca\desktop\progi\tpi\tpi-2024-2c\funciones.h
+
+1730755220 source:c:\users\jlarroca\desktop\progi\tpi\tpi-2024-2c\main.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
 	"funciones.h"
-
-1730748344 c:\users\jlarroca\desktop\progi\tpi\tpi-2024-2c\funciones.h
 
