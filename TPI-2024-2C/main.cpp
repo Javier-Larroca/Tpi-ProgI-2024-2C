@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-    setlocale(LC_ALL, "Spanish");
+    setlocale(LC_ALL, "Spanish"); //Seteo el lenguaje de la consola.
     srand (time(NULL));
 
     int opc, rankingPuntos[7]= {};

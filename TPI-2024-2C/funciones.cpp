@@ -45,7 +45,7 @@ void dibujarDado(int d)
 
 void dibujarDadosEnLinea(int dados[], int cantDados)
 {
-    string linea1 = " ", linea2 = " ", linea3 = " ", linea4 = " ";
+    string linea1 = "  ", linea2 = "  ", linea3 = "  ", linea4 = "  ";
 
     for(int x=0; x<cantDados; x++)
     {
@@ -118,6 +118,7 @@ void solicitarNombres(string &nombre1, string &nombre2)
 
 void definirPrimerJugador(string nombre1, string  nombre2, string nombres[])
 {
+
     cout<<endl<<"--------------------------------------------------------"<<endl<<endl;
     cout<<" Ahora solo nos resta definir que jugador comenzará, \n para eso debemos tirar un dado ¿Estas de acuerdo?"<<endl<<endl;
     system("pause");
@@ -184,14 +185,16 @@ void comenzarJuego(string nombres[], int puntos[], int cantBonzos[], int cantLan
             confirmar = 'S';
             puntosPorRonda[x] = 0;
             lanzadasExitosas = 0;
-            system("cls");
-            cout<<endl<<"[[[[[[[[[[[[[[[[[  RONDA: "<<ronda<<"  ]]]]]]]]]]]]]]]]]";
-            cout<<endl<<"  ------------------------------------------" <<endl<<endl;
-            cout<<"          -- Turno de: "<<nombres[x]<<" --"<<endl;
-            cout<<"        -- Puntos al momento: "<<puntos[x]<<" --"<<endl;
-            cout<<"     -- Cantidad de dados disponibles: "<<cantDadosRonda[x][ronda-1]<<" --"<<endl<<endl;
+
             while(toupper(confirmar) != 'N')
             {
+                system("cls");
+                cout<<endl<<"[[[[[[[[[[[[[[[[[  RONDA: "<<ronda<<"  ]]]]]]]]]]]]]]]]]";
+                cout<<endl<<"  -----------------------------------------" <<endl<<endl;
+                cout<<"          -- Turno de: "<<nombres[x]<<" --"<<endl;
+                cout<<"      -- Puntos totales al momento: "<<puntos[x]<<" --"<<endl;
+                cout<<"     -- Cantidad de dados disponibles: "<<cantDadosRonda[x][ronda-1]<<" --"<<endl<<endl;
+
                 puntosPorLanzada = lanzarDados(dados, cantDadosRonda[x][ronda-1]);
 //                if(ronda==2) //Prueba para que toquen tres numeros prohibidos.
 //                {
@@ -216,7 +219,7 @@ void comenzarJuego(string nombres[], int puntos[], int cantBonzos[], int cantLan
                             cout<<" Eliga entre la opción A o la opción B: ";
                             cin>>opc;
                         }
-                        switch (opc)
+                        switch (toupper(opc))
                         {
                         case 'A':
                             if(x==0)
@@ -225,9 +228,9 @@ void comenzarJuego(string nombres[], int puntos[], int cantBonzos[], int cantLan
                             }
                             else
                             {
-                                cantDadosRonda[0][ronda]=2;
+                                cantDadosRonda[0][ronda+1]=2;
                             }
-                            cout<<"   << Se quito un dado al oponente. >>"<<endl;;
+                            cout<<"   << ¡Se quito un dado al oponente! >>"<<endl;;
                             break;
                         case 'B':
                             puntosPorLanzada=puntosPorLanzada*2;
@@ -237,20 +240,24 @@ void comenzarJuego(string nombres[], int puntos[], int cantBonzos[], int cantLan
                     }
                     lanzadasExitosas++;
                     puntosPorRonda[x] += puntosPorLanzada;
-                    cout<<endl<<" Se obtuvieron "<<puntosPorLanzada<<" puntos en esta tirada"<<endl;
+                    cout<<endl<<" Lanzada exitosa n°: "<<lanzadasExitosas<<endl;
+                    cout<<" Se obtuvieron "<<puntosPorLanzada<<" puntos en esta tirada"<<endl;
                     cout<<" Puntos acumulados al momento en la ronda: "<<puntosPorRonda[x]<<endl;
                     cout<<endl<<" ¿Desea lanzar los dados una vez más? (S/N) ";
                     cin>>confirmar;
 
                     break;
                 case 1:
+
                     cout<<endl<<"           ¡Obtuviste 1 número prohibido! \n Perdes el turno y tus puntos acumulados en esta ronda."<<endl<<endl;
+
                     puntosPorRonda[x] = 0;
                     lanzadasExitosas = 0;
                     confirmar = 'N';
                     system("pause");
                     break;
                 case 2:
+
                     cout<<endl<<"        ¡Obtuviste 2 números prohibidos! \n Perdes el turno y tus puntos acumulados en esta ronda,\n    ¡La próxima ronda solo tendrás 2 dados!"<<endl<<endl;
                     puntosPorRonda[x] = 0;
                     lanzadasExitosas = 0;
@@ -259,9 +266,10 @@ void comenzarJuego(string nombres[], int puntos[], int cantBonzos[], int cantLan
                     system("pause");
                     break;
                 case 3:
+
                     cout<<endl<<"        ¡Obtuviste 3 números prohibidos! \n      Pierdes el juego... =C"<<endl<<endl;
                     puntos[x]=0;
-                    lanzadasExitosas = 0;
+                    cantLanzamientosExitosos[x] = 0;
                     cantBonzos[x]=0;
                     system("pause");
                     return;
@@ -274,7 +282,9 @@ void comenzarJuego(string nombres[], int puntos[], int cantBonzos[], int cantLan
                 cantLanzamientosExitosos[x]=lanzadasExitosas;
             }
         }
-        cout<<endl<<endl<<"--------------------------------------------------------"<<endl;
+
+        system("cls");
+        cout<<endl<<"--------------------------------------------------------"<<endl;
         cout<<endl<<"        -- Puntajes obtenidos en la ronda "<<ronda<<" -- "<<endl;
         cout<<"                - "<<nombres[0]<<": "<<puntosPorRonda[0]<<" -   "<<endl;
         cout<<"                - "<<nombres[1]<<": "<<puntosPorRonda[1]<<" -   "<<endl;
@@ -301,19 +311,24 @@ void recalcularPuntos(int puntos[], int cantBonzos[], int cantLanzamientosExitos
         {
             puntos[1]+=5;
         }
+        else
+        {
+            puntos[0]+=5;
+            puntos[1]+=5;
+        }
     }
 }
 
 void mostrarPuntosDeLaPartida(string nombres[], int puntos[],int cantBonzos[], int cantLanzamientosExitosos[])
 {
-    cout<<" Hito                  "<<nombres[0]<<"         "<<nombres[1]<<endl;
-    cout<<" -----------------------------------------------"<<endl;
-    cout<<" Puntos                    "<<puntos[0]<<"         "<<puntos[1]<<endl;
-    cout<<" Cant. 50 puntos           "<<puntos[0]/50<<"          "<<puntos[1]/50<<endl;
-    cout<<" Bonzo, ve a dormir        "<<cantBonzos[0]<<"          "<<cantBonzos[1]<<endl;
-    cout<<" Lanzamientos exitosos     "<<cantLanzamientosExitosos[0]<<"          "<<cantLanzamientosExitosos[1]<<endl;
+    cout<<"   Hito                    "<<nombres[0]<<"      "<<nombres[1]<<endl;
+    cout<<"   -----------------------------------------------"<<endl;
+    cout<<"   Puntos                    "<<puntos[0]<<"         "<<puntos[1]<<endl;
+    cout<<"   Cant. 50 puntos           "<<puntos[0]/50<<"          "<<puntos[1]/50<<"    (x3)"<<endl;
+    cout<<"   Bonzo, ve a dormir        "<<cantBonzos[0]<<"          "<<cantBonzos[1]<<"    (x5)"<<endl;
+    cout<<"   Lanzamientos exitosos     "<<cantLanzamientosExitosos[0]<<"          "<<cantLanzamientosExitosos[1]<<"    (x5)"<<endl;
     recalcularPuntos(puntos, cantBonzos, cantLanzamientosExitosos);
-    cout<<" Puntos finales            "<<puntos[0]<<"         "<<puntos[1]<<endl;
+    cout<<"   Puntos finales            "<<puntos[0]<<"         "<<puntos[1]<<endl;
 }
 
 void definirGanador(string nombres[], int puntos[], int cantBonzos[], int cantLanzamientosExitosos[])
@@ -407,12 +422,24 @@ void jugar(int rankingPuntos[], string rankingNombres[])
 void mostrarEstadisticas(string nombres[], int puntos[])
 {
 
-    cout<<"--------------------------------------------------------"<<endl;
-    cout<<" PUESTOS      -       JUGADOR       -        PUNTOS"<<endl;
-    for(int x=0; x<5; x++)
+    if(puntos[0]==0)
     {
-        cout<<"    "<<x+1<<"         -        "<<nombres[x]<<"        -        "<<puntos[x]<<endl;
+        cout<<endl<<"      Aún no jugadores registrados. "<<endl;
     }
-    cout<<"--------------------------------------------------------"<<endl;
+    else
+    {
+        cout<<"-------------------------------------------------------"<<endl;
+        cout<<" PUESTO       -       PUNTOS       -        JUGADOR"<<endl;
+        for(int x=0; x<5; x++)
+        {
+            if(puntos[x]!=0)
+            {
+                cout<<"    "<<x+1<<"         -        "<<puntos[x]<<"          -        "<<nombres[x]<<endl;
+            }
+        }
+        cout<<"--------------------------------------------------------"<<endl;
+
+    }
     system("pause");
 }
+
