@@ -5,6 +5,7 @@ using namespace std;
 
 void comenzarJuego(string nombres[], int puntos[], int cantBonzos[], int cantLanzamientosExitosos[]); //Función donde comienza el juego.
 int contarRepeticionesDeNumeroProhibido(int numeroPrhibido, int dados[]); //Cuenta la cantidad de numeros prohibidos obtenidos en una tirada
+void creditos();
 bool dadosIguales(int dados[]); //Función que nos devolvera true en caso de haber un Bonzo Ve a Dormir.
 void definirGanador(string nombres[], int puntos[], int cantBonzos[], int cantLanzamientosExitosos[]); //Definira el ganador dependiendo de los puntos y cantidad de bonzos obtenidos.
 void definirPrimerJugador(string nombre1, string nombre2, string nombres[]); //Define el jugador que comenzara, ordenandolo de manera correspondiente en el vector de nombres.

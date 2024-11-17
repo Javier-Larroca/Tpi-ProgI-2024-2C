@@ -40,7 +40,7 @@ int main()
             mostrarEstadisticas(rankingNombres, rankingPuntos);
             break;
         case 3:
-            //creditos();
+            creditos();
             break;
         case 0:
             cout<<endl<<" ¿Esta seguro que desea salir del juego? (S/N): ";

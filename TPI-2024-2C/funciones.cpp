@@ -443,3 +443,15 @@ void mostrarEstadisticas(string nombres[], int puntos[])
     system("pause");
 }
 
+void creditos()
+{
+    system("cls");
+
+    cout<<endl<<"--------------------------------------------------------"<<endl;
+    cout<<endl<<"                JUEGO REALIZADO POR:"<<endl;
+    cout<<endl<<"               JAVIER AGUSTIN LARROCA"<<endl;
+    cout<<endl<<"              Programación I - 2024 2C"<<endl;
+    cout<<endl<<"--------------------------------------------------------"<<endl<<endl;
+    system("pause");
+}
+
