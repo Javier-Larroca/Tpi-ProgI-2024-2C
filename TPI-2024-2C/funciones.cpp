@@ -411,7 +411,7 @@ void mostrarEstadisticas(string nombres[], int puntos[])
     cout<<" PUESTOS      -       JUGADOR       -        PUNTOS"<<endl;
     for(int x=0; x<5; x++)
     {
-        cout<<"    "<<x+1<<"         -     "<<nombres[x]<<"        -        "<<puntos[x]<<endl;
+        cout<<"    "<<x+1<<"         -        "<<nombres[x]<<"        -        "<<puntos[x]<<endl;
     }
     cout<<"--------------------------------------------------------"<<endl;
     system("pause");
