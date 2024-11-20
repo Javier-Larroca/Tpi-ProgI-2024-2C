@@ -1,35 +1,11 @@
 # depslib dependency file v1.0
-237 <<<<<<< HEAD
-
-1731872793 source:c:\users\jlarroca\desktop\progi\tpi\tpi-2024-2c\funciones.cpp
+1732145050 source:c:\users\jlarroca\desktop\progi\tpi\tpi-2024-2c\funciones.cpp
 	<iostream>
 	"funciones.h"
 
-1731791924 source:c:\progi\tpi\tpi-progi-2024-2c\tpi-2024-2c\funciones.cpp
-	<iostream>
-	"funciones.h"
+1732144956 c:\users\jlarroca\desktop\progi\tpi\tpi-2024-2c\funciones.h
 
-1731792559 c:\progi\tpi\tpi-progi-2024-2c\tpi-2024-2c\funciones.h
-
-1731792559 source:c:\progi\tpi\tpi-progi-2024-2c\tpi-2024-2c\main.cpp
-	<iostream>
-	<cstdlib>
-	<ctime>
-	"funciones.h"
-
-1730755314 45e7c6fd6cc23be8d068cb781c0de02deaab5
-	<iostream>
-	"funciones.h"
-
-1731873433 c:\users\jlarroca\desktop\progi\tpi\tpi-2024-2c\funciones.h
-
-1731873271 source:c:\users\jlarroca\desktop\progi\tpi\tpi-2024-2c\main.cpp
-	<iostream>
-	<cstdlib>
-	<ctime>
-	"funciones.h"
-
-1730755220 dd5e6c846b04afda0ffdf0e534e402793acef
+1732145112 source:c:\users\jlarroca\desktop\progi\tpi\tpi-2024-2c\main.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>

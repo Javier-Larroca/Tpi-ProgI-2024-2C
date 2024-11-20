@@ -11,10 +11,10 @@ int main()
     srand (time(NULL));
 
     int opc, rankingPuntos[7]= {};
-    char confirmar = 'C';
     string rankingNombres[7]= {};
+    bool juego = true;
 
-    while(true)
+    while(juego)
     {
         system("cls");
         cout << " 88\"\"Yb  dP\"Yb  88b 88 8888P  dP\"Yb" << endl;
@@ -43,19 +43,7 @@ int main()
             creditos();
             break;
         case 0:
-            cout<<endl<<" ¿Esta seguro que desea salir del juego? (S/N): ";
-            cin>>confirmar;
-            while(toupper(confirmar)!='N' && toupper(confirmar)!='S')
-            {
-                cout<<endl<<" Opción ingresada incorrecta. (S/N): ";
-                cin>>confirmar;
-            }
-            if(toupper(confirmar)=='S')
-            {
-                cout<<endl<<"    ¡Muchas gracias por haber jugado BONZO! "<<endl;
-                return 0;
-            }
-            confirmar = 'C';
+            juego = finalizarJuego();
             break;
         default:
             cout << "Opcion invalida" << endl;

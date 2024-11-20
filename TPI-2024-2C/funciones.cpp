@@ -455,3 +455,23 @@ void creditos()
     system("pause");
 }
 
+bool finalizarJuego()
+{
+    char confirmar = 'C';
+
+    cout<<endl<<" ¿Esta seguro que desea salir del juego? (S/N): ";
+    cin>>confirmar;
+    while(toupper(confirmar)!='N' && toupper(confirmar)!='S')
+    {
+        cout<<endl<<" Opción ingresada incorrecta. (S/N): ";
+        cin>>confirmar;
+    }
+    if(toupper(confirmar)=='S')
+    {
+        cout<<endl<<"    ¡Muchas gracias por haber jugado BONZO! "<<endl;
+        return false;
+    }
+
+    return true;
+}
+
