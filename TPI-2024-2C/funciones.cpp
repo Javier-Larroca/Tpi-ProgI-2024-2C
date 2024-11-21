@@ -438,7 +438,40 @@ void mostrarEstadisticas(string nombres[], int puntos[])
             }
         }
         cout<<"--------------------------------------------------------"<<endl;
+
     }
     system("pause");
+}
+
+void creditos()
+{
+    system("cls");
+
+    cout<<endl<<"--------------------------------------------------------"<<endl;
+    cout<<endl<<"                JUEGO REALIZADO POR:"<<endl;
+    cout<<endl<<"               JAVIER AGUSTIN LARROCA"<<endl;
+    cout<<endl<<"              Programación I - 2024 2C"<<endl;
+    cout<<endl<<"--------------------------------------------------------"<<endl<<endl;
+    system("pause");
+}
+
+bool finalizarJuego()
+{
+    char confirmar = 'C';
+
+    cout<<endl<<" ¿Esta seguro que desea salir del juego? (S/N): ";
+    cin>>confirmar;
+    while(toupper(confirmar)!='N' && toupper(confirmar)!='S')
+    {
+        cout<<endl<<" Opción ingresada incorrecta. (S/N): ";
+        cin>>confirmar;
+    }
+    if(toupper(confirmar)=='S')
+    {
+        cout<<endl<<"    ¡Muchas gracias por haber jugado BONZO! "<<endl;
+        return false;
+    }
+
+    return true;
 }
 
